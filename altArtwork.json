@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Monkey",
+      "description": "It's actually a monkey",
+      "external_url": "https://onepiece.fandom.com/wiki/Monkey_D._Luffy",
+      "image": "https://static.wikia.nocookie.net/onepiece/images/6/6d/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png/revision/latest?cb=20200429191518",
+      "attributes": [
+        {
+          "trait_type": "BackgroundColor",
+          "value": "sea"
+        },
+        {
+          "trait_type": "Character",
+          "value": "googly"
+        },
+        {
+          "trait_type": "Stamina",
+          "value": 42
+        }
+      ]
+    }
+  ]
+  

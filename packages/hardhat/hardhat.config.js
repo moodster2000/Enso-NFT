@@ -11,9 +11,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 
 /*
       📡 This is where you configure your deploy configuration for 🏗 scaffold-eth
-
       check out `packages/scripts/deploy.js` to customize your deployment
-
       out of the box it will auto deploy anything in the `contracts` folder and named *.sol
       plus it will use *.args for constructor args
 */
@@ -21,7 +19,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "localhost";
+const defaultNetwork = "mainnet";
 
 function mnemonic() {
   try {
@@ -64,7 +62,7 @@ module.exports = {
       },
     },
     mainnet: {
-      url: "https://mainnet.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", //<---- YOUR INFURA ID! (or it won't work)
+      url: "https://mainnet.infura.io/v3/718c1134610748a5a2ca097a5a48ae01", //<---- YOUR INFURA ID! (or it won't work)
       accounts: {
         mnemonic: mnemonic(),
       },

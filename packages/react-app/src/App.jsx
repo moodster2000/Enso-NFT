@@ -2,8 +2,10 @@ import { LinkOutlined } from "@ant-design/icons";
 import { StaticJsonRpcProvider, Web3Provider } from "@ethersproject/providers";
 import { formatEther, parseEther } from "@ethersproject/units";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { Alert, Button, Card, Col, Input, List, Menu, Row } from "antd";
-import "antd/dist/antd.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Alert, Col, Input, List, Menu, Row, Divider } from "antd";
+// import "antd/dist/antd.css";
 import { useUserAddress } from "eth-hooks";
 import { utils } from "ethers";
 import React, { useCallback, useEffect, useState } from "react";
@@ -11,11 +13,17 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import StackGrid from "react-stack-grid";
 import Web3Modal from "web3modal";
-import "./App.css";
+import "./App.scss";
 import assets from "./assets.js";
 import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import { DAI_ABI, DAI_ADDRESS, INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import firebase from "./firebase/firebase.utils";
+import ReactPlayer from "react-player/lazy";
+import { LogoDiscord, LogoReddit, LogoTwitter } from "react-ionicons";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import {
   useBalance,
   useContractLoader,
@@ -27,6 +35,14 @@ import {
   useOnBlock,
   useUserProvider,
 } from "./hooks";
+import { HashLink } from "react-router-hash-link";
+import { Card, CardContent, CardTitle, CardSubtitle, CardHeader, CardActions } from "@react-md/card";
+import Timeline from "@material-ui/lab/Timeline";
+import TimelineItem from "@material-ui/lab/TimelineItem";
+import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
+import TimelineConnector from "@material-ui/lab/TimelineConnector";
+import TimelineContent from "@material-ui/lab/TimelineContent";
+import TimelineDot from "@material-ui/lab/TimelineDot";
 
 const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
@@ -56,7 +72,8 @@ console.log("📦 Assets: ", assets);
 */
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS.mainnet;
+// NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -139,8 +156,29 @@ const logoutOfWeb3Modal = async () => {
 };
 
 function App(props) {
+  AOS.init();
   const mainnetProvider = scaffoldEthProvider && scaffoldEthProvider._network ? scaffoldEthProvider : mainnetInfura;
+  const [suggestion, setSuggestion] = useState("");
+  const [email, setEmail] = useState("");
 
+  const handleSuggestion = evt => {
+    evt.preventDefault();
+    const db = firebase.firestore();
+    db.collection("suggestions").add({
+      suggestion: suggestion,
+      timestamp: Date(),
+    });
+    setSuggestion("");
+  };
+  const handleEmail = evt => {
+    evt.preventDefault();
+    const db = firebase.firestore();
+    db.collection("email").add({
+      email: email,
+      timestamp: Date(),
+    });
+    setEmail("");
+  };
   const [injectedProvider, setInjectedProvider] = useState();
   /* 💵 This hook will get the price of ETH from 🦄 Uniswap: */
   const price = useExchangePrice(targetNetwork, mainnetProvider);
@@ -284,7 +322,7 @@ function App(props) {
     const networkLocal = NETWORK(localChainId);
     if (selectedChainId === 1337 && localChainId === 31337) {
       networkDisplay = (
-        <div style={{ zIndex: 2, position: "absolute", right: 0, top: 60, padding: 16 }}>
+        <div style={{ zIndex: 2, position: "fixed", right: 0, top: 60, padding: 16 }}>
           <Alert
             message="⚠️ Wrong Network ID"
             description={
@@ -301,7 +339,7 @@ function App(props) {
       );
     } else {
       networkDisplay = (
-        <div style={{ zIndex: 2, position: "absolute", right: 0, top: 60, padding: 16 }}>
+        <div style={{ zIndex: 2, position: "fixed", right: 0, top: 60, padding: 16 }}>
           <Alert
             message="⚠️ Wrong Network"
             description={
@@ -317,11 +355,11 @@ function App(props) {
       );
     }
   } else {
-    networkDisplay = (
-      <div style={{ zIndex: -1, position: "absolute", right: 154, top: 28, padding: 16, color: targetNetwork.color }}>
-        {targetNetwork.name}
-      </div>
-    );
+    // networkDisplay = (
+    //   <div style={{ zIndex: -1, position: "absolute", right: 154, top: 28, padding: 16, color: targetNetwork.color }}>
+    //     {targetNetwork.name}
+    //   </div>
+    // );
   }
 
   const loadWeb3Modal = useCallback(async () => {
@@ -359,7 +397,7 @@ function App(props) {
           onClick={() => {
             faucetTx({
               to: address,
-              value: parseEther("0.01"),
+              value: parseEther("0.05"),
             });
             setFaucetClicked(true);
           }}
@@ -403,132 +441,135 @@ function App(props) {
   }, [assets, readContracts, transferEvents]);
 
   const galleryList = [];
+  const buttonList = [];
+  const connectToWallet = [];
   for (const a in loadedAssets) {
     console.log("loadedAssets", a, loadedAssets[a]);
 
     const cardActions = [];
-    if (loadedAssets[a].forSale) {
-      cardActions.push(
-        <div>
+    console.log(address + "mazza");
+    if (loadedAssets[a].forSale && address) {
+      // cardActions.push(
+      //   <div className="button-row">
+      //     <Button
+      //       variant="contained"
+      //       onClick={() => {
+      //         const ethAmount = 0.05;
+      //         // "value": web3.utils.toWei(amount,'ether')
+      //         console.log("gasPrice,", gasPrice);
+      //         tx(
+      //           writeContracts.YourCollectible.mintItem(loadedAssets[a].id, {
+      //             value: parseEther(ethAmount.toString()),
+      //           }),
+      //         );
+      //       }}
+      //       className="nft-button"
+      //     >
+      //       Collect
+      //     </Button>
+      //     {/* <Button
+      //       onClick={() => {
+      //         tx(writeContracts.YourCollectible.withdraw());
+      //       }}
+      //       className = "nft-button"
+      //     >
+      //       Withdraw
+      //     </Button> */}
+      //   </div>,
+      // );
+      buttonList.push(
+        <div className="button-row">
           <Button
+            variant="contained"
             onClick={() => {
+              const ethAmount = 0.05;
+              // "value": web3.utils.toWei(amount,'ether')
               console.log("gasPrice,", gasPrice);
-              tx(writeContracts.YourCollectible.mintItem(loadedAssets[a].id, { gasPrice }));
+              tx(
+                writeContracts.YourCollectible.mintItem(loadedAssets[a].id, {
+                  value: parseEther(ethAmount.toString()),
+                }),
+              );
             }}
+            className="nft-button"
           >
-            Mint
+            Collect
           </Button>
+          {/* <Button
+            onClick={() => {
+              tx(writeContracts.YourCollectible.withdraw());
+            }}
+            className = "nft-button"
+          >
+            Withdraw
+          </Button> */}
         </div>,
       );
     } else {
-      cardActions.push(
+      connectToWallet.push(
         <div>
-          owned by:{" "}
-          <Address
-            address={loadedAssets[a].owner}
-            ensProvider={mainnetProvider}
-            blockExplorer={blockExplorer}
-            minimized
-          />
+          <Button
+            variant="outlined"
+            className="alt-nft-button"
+            /* type={minimized ? "default" : "primary"}     too many people just defaulting to MM and having a bad time */
+            onClick={loadWeb3Modal}
+          >
+            Connect to Wallet
+          </Button>
         </div>,
       );
     }
-
-    galleryList.push(
-      <Card
-        style={{ width: 200 }}
-        key={loadedAssets[a].name}
-        actions={cardActions}
-        title={
-          <div>
-            {loadedAssets[a].name}{" "}
-            <a
-              style={{ cursor: "pointer", opacity: 0.33 }}
-              href={loadedAssets[a].external_url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkOutlined />
-            </a>
-          </div>
-        }
-      >
-        <img style={{ maxWidth: 130 }} src={loadedAssets[a].image} alt="" />
-        <div style={{ opacity: 0.77 }}>{loadedAssets[a].description}</div>
-      </Card>,
-    );
+    if (loadedAssets[a].forSale) {
+      galleryList.push(
+        <Card
+          className="nft-card"
+          key={loadedAssets[a].name}
+          title={
+            <div>
+              {loadedAssets[a].name}{" "}
+              <a
+                style={{ cursor: "pointer", opacity: 0.33 }}
+                href={loadedAssets[a].external_url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkOutlined />
+              </a>
+            </div>
+          }
+        >
+          {/* <video style = {{
+            height: 100,
+            width: 100,
+          }}>
+            <source src={"https://ipfs.io/ipfs/Qmd6rNTbeviB4tGruY27z47wAs27yRGHTDyp7b2qhxLHtU"} type="video/mp4" />
+          </video> */}
+          {/* https://ipfs.io/ipfs/QmTSwPnsjnwBdqDrpGFP8LEaJjaMK9TVVyzLwvmqzse79G */}
+          {/* <img className="nft-image" src={loadedAssets[a].image} alt="" /> */}
+          <ReactPlayer
+            // width='40%'
+            height="90%"
+            className="nft-video"
+            url={loadedAssets[a].image}
+            playing
+            loop="true"
+            // controls
+            muted
+          />
+          <div style={{ opacity: 0.77 }}>{loadedAssets[a].description}</div>
+          <CardActions>{cardActions}</CardActions>
+        </Card>,
+      );
+    }
   }
 
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
-      <Header />
+      {/* <Header /> */}
       {networkDisplay}
 
       <BrowserRouter>
-        <Menu style={{ textAlign: "center" }} selectedKeys={[route]} mode="horizontal">
-          <Menu.Item key="/">
-            <Link
-              onClick={() => {
-                setRoute("/");
-              }}
-              to="/"
-            >
-              Gallery
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/yourcollectibles">
-            <Link
-              onClick={() => {
-                setRoute("/yourcollectibles");
-              }}
-              to="/yourcollectibles"
-            >
-              YourCollectibles
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/transfers">
-            <Link
-              onClick={() => {
-                setRoute("/transfers");
-              }}
-              to="/transfers"
-            >
-              Transfers
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/ipfsup">
-            <Link
-              onClick={() => {
-                setRoute("/ipfsup");
-              }}
-              to="/ipfsup"
-            >
-              IPFS Upload
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/ipfsdown">
-            <Link
-              onClick={() => {
-                setRoute("/ipfsdown");
-              }}
-              to="/ipfsdown"
-            >
-              IPFS Download
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/debugcontracts">
-            <Link
-              onClick={() => {
-                setRoute("/debugcontracts");
-              }}
-              to="/debugcontracts"
-            >
-              Debug Contracts
-            </Link>
-          </Menu.Item>
-        </Menu>
-
         <Switch>
           <Route exact path="/">
             {/*
@@ -537,13 +578,455 @@ function App(props) {
                 and give you a form to interact with it locally
             */}
 
-            <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 256 }}>
+            {/* <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 256 }}>
               <StackGrid columnWidth={200} gutterWidth={16} gutterHeight={16}>
                 {galleryList}
               </StackGrid>
+            </div> */}
+            <div className="appbar">
+              <div className="left-container">
+                <HashLink smooth to={"/#section-two"} className="left-option">
+                  About
+                </HashLink>
+                <HashLink smooth to={"/#section-three"} className="left-option">
+                  RoadMap
+                </HashLink>
+                <HashLink smooth to={"/#section-four"} className="left-option">
+                  FAQ
+                </HashLink>
+              </div>
+              <div className="center">ENSO</div>
+              <div className="options">
+                <a href="https://discord.gg/Bv2NuGZ7Yv" className="icon-button">
+                  <LogoDiscord
+                    height="15%"
+                    // width="15%"
+                    color={"#464646"}
+                    className="icon"
+                  />
+                </a>
+                <a href="https://twitter.com/tryEnso" className="icon-button">
+                  <LogoTwitter color={"#464646"} className="icon" />
+                </a>
+                <a href="https://www.reddit.com/r/enso_community/" className="icon-button">
+                  <LogoReddit color={"#464646"} className="icon" />
+                </a>
+                {/* <body className="option">Check My Place</body> */}
+              </div>
             </div>
-          </Route>
+            <section id="section-one" className="section-one">
+              <div className="headers">
+                <body className="title">Build A Community with Your NFTs</body>
+                <body className="sub-title">
+                  An easy to use NFT community builder for creators<br></br>to give their tokens more utility
+                </body>
+              </div>
+              <div className="graphic"></div>
+              <div className="button-row">
+                {/* <Col span={4}> */}
+                <HashLink smooth to={"/#buy-nft"}>
+                  <Button variant="contained" type="primary" className="button-filled">
+                    <div className="button-filled-text">Collect an ENSO NFT</div>
+                  </Button>
+                </HashLink>
+                {/* </Col> */}
+                {/* <Col span={5}> */}
+                <div className="access-title">to Gain Priority Access or</div>
+                {/* </Col> */}
+                {/* <Col span={4}> */}
+                <HashLink smooth to={"/#section-five"}>
+                  <Button variant="outlined" type="primary" className="button">
+                    <div className="button-text">Join Our Free Waitlist</div>
+                  </Button>
+                </HashLink>
 
+                {/* </Col> */}
+              </div>
+            </section>
+
+            <section id="section-two" className="section-two">
+              <Divider className="dividerH">
+                <body className="header">WHAT IS ENSO?</body>
+              </Divider>
+              <body className="subHeader">A space where your tokenholders can…</body>
+              <div className="feature-row">
+                <div className="feature" data-aos="fade-right">
+                  <body className="emoji">🤫</body>
+                  <body className="feature-descript">Access exclusive content</body>
+                </div>
+                <div className="feature" data-aos="fade-right">
+                  <body className="emoji">🚁</body>
+                  <body className="feature-descript">Easily get airdropped with surprises</body>
+                </div>
+              </div>
+              <div className="feature-row">
+                <div className="feature" data-aos="fade-left">
+                  <body className="emoji">🏆</body>
+                  <body className="feature-descript">Be rewarded for their participation</body>
+                </div>
+                <div className="feature" data-aos="fade-left">
+                  <body className="emoji">🥳</body>
+                  <body className="feature-descript">
+                    and most importantly, Have fun through chats, threads, and voice rooms
+                  </body>
+                </div>
+              </div>
+              <div className="who-section">
+                <div className="left-section">
+                  <body className="left-text">ENSO IS PERFECT FOR...</body>
+                </div>
+                <div className="right-section" data-aos="fade-down">
+                  <div className="demographic">
+                    <body className="top-text">Creators who mint Individual Artworks</body>
+                    <body className="bottom-text">
+                      You are an artist like Wlop that has minted multiple artworks and any collector that holds one of
+                      your pieces is able to join your Enso circle.
+                    </body>
+                  </div>
+                  <div className="demographic">
+                    <body className="top-text">Creators of an NFT Collection</body>
+                    <body className="bottom-text">
+                      You created an NFT collection called “Excited Dogs" and anyone who owns one of them is able to
+                      access your Enso circle.
+                    </body>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="section-three" className="section-three">
+              <body className="header-roadmap">ROAD MAP</body>
+              <body className="sub-header">{"We Set These Goals to Make Our Vision A Reality"}</body>
+              <div className="road-map" data-aos="fade-down">
+                <Card className="quarters">
+                  <CardHeader>
+                    <CardTitle className="quarter-title">Early Q3</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Timeline align="alternate">
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Set up our subreddit and discord server
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Code the draft our smart contract</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Design the framework of the UI</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Build core functionality</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Host biweekly town hall twitter spaces
+                        </TimelineContent>
+                      </TimelineItem>
+                    </Timeline>
+                  </CardContent>
+                </Card>
+                <Card className="quarters">
+                  <CardHeader>
+                    <CardTitle className="quarter-title">Late Q3</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Timeline align="alternate">
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Focus building out the smaller features
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Extensive alpha testing of the platform
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Start Private Beta testing with the owners of Enso NFT
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Expand the Enso community</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Listen to feedback and integrate it
+                        </TimelineContent>
+                      </TimelineItem>
+                    </Timeline>
+                  </CardContent>
+                </Card>
+                <Card className="quarters">
+                  <CardHeader>
+                    <CardTitle className="quarter-title">Early Q4</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Timeline align="alternate">
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Expand developer team</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Release of public beta of the project
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Begin building the voice rooms</TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                          <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">
+                          Review and integrate feedback from public beta
+                        </TimelineContent>
+                      </TimelineItem>
+                      <TimelineItem>
+                        <TimelineSeparator>
+                          <TimelineDot />
+                        </TimelineSeparator>
+                        <TimelineContent className="quarter-descrip">Launch of platform</TimelineContent>
+                      </TimelineItem>
+                    </Timeline>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+            <section id="section-four" className="section-four">
+              <div className="header-div">
+                <body className="header">FAQ</body>
+              </div>
+              <div className="right-section" data-aos="fade-left">
+                <div className="Q-A">
+                  <body className="question">Who’s on the team?</body>
+                  <body className="answer">
+                    Enso was created by 2 friends, Moodi and Tom, who are excited by the future of NFTs and saw that
+                    current NFT creators want to give more utility to their tokens.
+                    <br /> Moodi is an experienced startup founder and has a background in community building and computer
+                    science, specifically blockchain technology and app development.
+                    <br /> Tom has a background in marketing and finance. He adopted BTC and ETH back in 2017 and since
+                    has been a huge proponent of crypto.
+                    <br />
+                    The NFTs were created by Moodi and designed by Sunrises. Check out more of their work{" "}
+                    <a href="https://www.instagram.com/the__sunrises_art/" className="link-text">
+                      here{" "}
+                    </a>
+                    .
+                  </body>
+                </div>
+                <div className="Q-A">
+                  <body className="question">Why do we want your email for the waitlist?</body>
+                  <body className="answer">When we release more updates and info, we can easily notify you!</body>
+                </div>
+                <div className="Q-A">
+                  <body className="question">Specs of the Enso NFT</body>
+                  <body className="answer">
+                    <ul>
+                      <li>
+                        Each of the unique Enso NFTs are unique and programmatically generated as they all include a
+                        different background pattern. There are 10 red, 10 blue, 10 green and 5 multicolored patterns
+                        and 5 rare editions with spiral designs.
+                      </li>
+                      <li>The NFTs are stored as ERC-721 tokens on the Ethereum blockchain and hosted on IPFS.</li>
+                      <li>All of the token costs 0.05 to mint and there are no bonding curves.</li>
+                    </ul>
+                  </body>
+                </div>
+                <div className="Q-A">
+                  <body className="question">How can you reach out to us?</body>
+                  <body className="answer">
+                    You can join{" "}
+                    <a href="https://discord.gg/Bv2NuGZ7Yv" className="link-text">
+                      our discord{" "}
+                    </a>
+                    or{" "}
+                    <a href="https://www.reddit.com/r/enso_community/" className="link-text">
+                      subreddit{" "}
+                    </a>{" "}
+                    to reach out to us. Or you can send us a{" "}
+                    <a href="https://twitter.com/tryEnso" className="link-text">
+                      DM on Twitter.
+                    </a>
+                  </body>
+                </div>
+              </div>
+            </section>
+            <section id="buy-nft" className="buy-nft">
+              <div className="description">
+                <div className="header"></div>
+                <div className="sub-header">
+                  {galleryList.length != 0 ? "Price: 0.05 ETH - Only " + galleryList.length + " Available" : ""}
+                </div>
+                <ul className="headerm">
+                  <li>
+                    A limited NFT collection where the token doubles as your membership to the Enso group as well as
+                    access to the Enso platform when it launches.
+                  </li>
+                  <li>Each edition has a unique pattern generated through infinitive code.</li>
+                </ul>
+                {galleryList.length == 0 ? <CircularProgress style ={{
+                  color: "white",
+                }}/> : 
+                <div className="buttonDesign">{address ? buttonList[0] : connectToWallet[0]}</div>}
+                <div data-aos="fade-left">
+                  <div className="feature-row1">
+                    <Card className="feature">
+                      <CardContent>
+                        <div className="feature-title">🥇</div>
+                        <div className="subcontent">Be one of the first to use Enso</div>
+                      </CardContent>
+                    </Card>
+                    <Card className="feature">
+                      <CardContent>
+                        <div className="feature-title">📢</div>
+                        <div className="subcontent">Have a voice in how we build the platform</div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div className="feature-row2">
+                    <Card className="feature">
+                      <CardContent>
+                        <div className="feature-title">🍻</div>
+                        <div className="subcontent">Membership to the Enso group</div>
+                      </CardContent>
+                    </Card>
+                    <a href="https://twitter.com/tryEnso" className="link-text">
+                      <div className="smallerText">
+                        {" "}
+                        Access to our private discord until we launch Enso!
+                        <br /> DM us on twitter for access
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="nfts" data-aos="fade-right">
+                <ReactPlayer
+                  // width='40%'
+                  height="90%"
+                  className="nft-video"
+                  url={"https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/4D/ENOS4D_RED.mp4"}
+                  playing
+                  loop="true"
+                  controls
+                  muted
+                />
+              </div>
+            </section>
+            <div className="bottom-section">
+              <section id="section-five" className="section-five">
+                <body className="header">JOIN OUR WAITLIST</body>
+                <body className="subheader">
+                  Be one of the first to know when we launch and get other important updates!
+                </body>
+                <form className="suggestion-col" onSubmit={handleEmail}>
+                  <TextField
+                    className="suggestion"
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    id="standard-required"
+                    label="Email"
+                  />
+                  <Button variant="outlined" type="primary" className="button">
+                    <body className="button-filled-text">Submit</body>
+                  </Button>
+                </form>
+              </section>
+              <section id="section-six" className="section-six">
+                <body className="header">SUGGESTION BOX</body>
+                <body className="subheader">We are open to any and all suggestions so send them over!</body>
+                <form className="suggestion-col" onSubmit={handleSuggestion}>
+                  <TextField
+                    id="standard-full-width"
+                    label="Suggestion Box"
+                    multiline
+                    className="suggestion"
+                    rows={4}
+                    required
+                    value={suggestion}
+                    onChange={e => setSuggestion(e.target.value)}
+                    variant="outlined"
+                    // defaultValue="Example: There should be a dark and light theme"
+                  />
+                  <Button variant="contained" type="primary" className="button-filled">
+                    <body className="button-filled-text">SEND</body>
+                  </Button>
+                </form>
+                {/* <div className="social-row">
+                <a href="https://youtube.com">
+                  <TwitterCircleFilled className="icon" />
+                </a>
+                <TwitterCircleFilled className="icon" />
+                <TwitterCircleFilled className="icon" />
+                <TwitterCircleFilled className="icon" />
+                <TwitterCircleFilled className="icon" />
+              </div> */}
+              </section>
+              <section className="endSection">
+                <body className="header">CREATE AN AMAZING COMMUNITY</body>
+                <body className="subheader">© TRY ENSO 2021 - ALL RIGHTS RESERVED</body>
+              </section>
+            </div>
+            {/* <StackGrid columnWidth={200} gutterWidth={16} gutterHeight={16}>
+              {galleryList}
+            </StackGrid>
+             */}
+          </Route>
+          {/*
           <Route path="/yourcollectibles">
             <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
               <List
@@ -700,14 +1183,14 @@ function App(props) {
               address={address}
               blockExplorer={blockExplorer}
             />
-          </Route>
+          </Route>*/}
         </Switch>
       </BrowserRouter>
 
-      <ThemeSwitch />
+      {/* <ThemeSwitch /> */}
 
       {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
-      <div style={{ position: "fixed", textAlign: "right", right: 0, top: 0, padding: 10 }}>
+      {/* <div style={{ position: "fixed", textAlign: "right", right: 0, top: 30, padding: 20 }}>
         <Account
           address={address}
           localProvider={localProvider}
@@ -720,10 +1203,10 @@ function App(props) {
           blockExplorer={blockExplorer}
         />
         {faucetHint}
-      </div>
+      </div> */}
 
       {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
-      <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
+      {/* <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
         <Row align="middle" gutter={[4, 4]}>
           <Col span={8}>
             <Ramp price={price} address={address} networks={NETWORKS} />
@@ -747,11 +1230,10 @@ function App(props) {
             </Button>
           </Col>
         </Row>
-
+          
         <Row align="middle" gutter={[4, 4]}>
           <Col span={24}>
             {
-              /*  if the local provider has a signer, let's show the faucet:  */
               faucetAvailable ? (
                 <Faucet localProvider={localProvider} price={price} ensProvider={mainnetProvider} />
               ) : (
@@ -760,7 +1242,7 @@ function App(props) {
             }
           </Col>
         </Row>
-      </div>
+          </div> */}
     </div>
   );
 }

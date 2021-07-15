@@ -1,342 +1,819 @@
 [
   {
-    "name": "Buffalo",
-    "description": "It's actually a bison?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=buffalo",
-    "image": "https://austingriffith.com/images/paintings/buffalo.jpg",
+    "name": "Enso #3",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE3.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
       {
-        "trait_type": "BackgroundColor",
-        "value": "green"
+        "trait_type": "#of Colors",
+        "value": 1
       },
       {
-        "trait_type": "Eyes",
-        "value": "googly"
-      },
-      {
-        "trait_type": "Stamina",
-        "value": 42
-      }
-    ]
-  },
-  {
-    "name": "Zebra",
-    "description": "What is it so worried about?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=zebra",
-    "image": "https://austingriffith.com/images/paintings/zebra.jpg",
-    "attributes": [
-      {
-        "trait_type": "BackgroundColor",
+        "trait_type": "color",
         "value": "blue"
       },
       {
-        "trait_type": "Eyes",
-        "value": "googly"
-      },
-      {
-        "trait_type": "Stamina",
-        "value": 38
+        "trait_type": "Pattern",
+        "value": "Radial Design #3"
       }
     ]
   },
   {
-    "name": "Rhino",
-    "description": "What a horn!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=rhino",
-    "image": "https://austingriffith.com/images/paintings/rhino.jpg",
+    "name": "Enso #28",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED8.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
       {
-        "trait_type": "BackgroundColor",
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #28"
+      }
+    ]
+  },
+  {
+    "name": "Enso #38",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/4D/ENOS4D_RED.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Spiral Design #3"
+      }
+    ]
+  },
+  {
+    "name": "Enso #4",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE4.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #4"
+      }
+    ]
+  },
+  {
+    "name": "Enso #15",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN5.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #15"
+      }
+    ]
+  },
+  {
+    "name": "Enso #10",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE10.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #10"
+      }
+    ]
+  },
+  {
+    "name": "Enso #6",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE6.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #6"
+      }
+    ]
+  },
+  {
+    "name": "Enso #9",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE9.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #9"
+      }
+    ]
+  },
+  {
+    "name": "Enso #31",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRARE-5/ENOSRARE1.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "maroon"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "purple"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "turquoise"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #31"
+      }
+    ]
+  },
+  {
+    "name": "Enso #37",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/4D/ENOS4D_GREEN.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Spiral Design #2"
+      }
+    ]
+  },
+  {
+    "name": "Enso #14",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN4.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #14"
+      }
+    ]
+  },
+  {
+    "name": "Enso #7",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE7.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #7"
+      }
+    ]
+  },
+  
+  {
+    "name": "Enso #23",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED3.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #23"
+      }
+    ]
+  },
+  {
+    "name": "Enso #13",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN3.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #13"
+      }
+    ]
+  },
+  {
+    "name": "Enso #11",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN1.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #11"
+      }
+    ]
+  },
+  {
+    "name": "Enso #22",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED2.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #22"
+      }
+    ]
+  },
+  {
+    "name": "Enso #12",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN2.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #12"
+      }
+    ]
+  },
+  {
+    "name": "Enso #16",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN6.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #16"
+      }
+    ]
+  },
+  {
+    "name": "Enso #33",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRARE-5/ENOSRARE3.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "lime green"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "blue green"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #33"
+      }
+    ]
+  },
+  {
+    "name": "Enso #25",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED5.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #25"
+      }
+    ]
+  },
+  {
+    "name": "Enso #18",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN8.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #18"
+      }
+    ]
+  },
+  {
+    "name": "Enso #29",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED9.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #29"
+      }
+    ]
+  },
+  {
+    "name": "Enso #19",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN9.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #19"
+      }
+    ]
+  },
+  {
+    "name": "Enso #21",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED1.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #21"
+      }
+    ]
+  },
+  {
+    "name": "Enso #17",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN7.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #17"
+      }
+    ]
+  },
+  {
+    "name": "Enso #24",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED4.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #24"
+      }
+    ]
+  },
+  {
+    "name": "Enso #20",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSGREEN/ENOSGREEN10.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #20"
+      }
+    ]
+  },
+  {
+    "name": "Enso #1",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE1.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #1"
+      }
+    ]
+  },
+  {
+    "name": "Enso #26",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED6.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #26"
+      }
+    ]
+  },
+  {
+    "name": "Enso #27",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED7.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #27"
+      }
+    ]
+  },
+  {
+    "name": "Enso #8",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE8.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #8"
+      }
+    ]
+  },
+  {
+    "name": "Enso #30",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRED-10/ENOSRED10.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #30"
+      }
+    ]
+  },
+  {
+    "name": "Enso #34",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRARE-5/ENOSRARE4.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
+    "attributes": [
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
         "value": "pink"
       },
       {
-        "trait_type": "Eyes",
-        "value": "googly"
+        "trait_type": "color 2",
+        "value": "yellow"
       },
       {
-        "trait_type": "Stamina",
-        "value": 22
+        "trait_type": "color 3",
+        "value": "lime green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #34"
       }
     ]
   },
   {
-    "name": "Fish",
-    "description": "Is that an underbyte?",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=fish",
-    "image": "https://austingriffith.com/images/paintings/fish.jpg",
+    "name": "Enso #32",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRARE-5/ENOSRARE2.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 15
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "purple"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "blue gray"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "yellow"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #32"
+      }
     ]
   },
   {
-    "name": "Flamingo",
-    "description": "So delicate.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=flamingo",
-    "image": "https://austingriffith.com/images/paintings/flamingo.jpg",
+    "name": "Enso #39",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/RARE/ENOSRARE6.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "black"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 6
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "yellow"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "purple"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "orange"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Spiral Design #4"
+      }
     ]
   },
   {
-    "name": "Godzilla",
-    "description": "Raaaar!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=godzilla",
-    "image": "https://austingriffith.com/images/paintings/godzilla.jpg",
+    "name": "Enso #35",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSRARE-5/ENOSRARE5.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "orange"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 99
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "pink"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "purple"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "red"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #35"
+      }
     ]
   },
   {
-    "name": "Antelope",
-    "description": "Speed goat.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=antelope",
-    "image": "https://austingriffith.com/images/paintings/antelope.jpg",
+    "name": "Enso #36",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/4D/ENOS4DBLUE.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "purple"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 86
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Spiral Design #1"
+      }
     ]
   },
   {
-    "name": "Bear",
-    "description": "Snack time!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=bear",
-    "image": "https://austingriffith.com/images/paintings/bear.jpg",
+    "name": "Enso #2",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE2.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "green"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 47
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #2"
+      }
     ]
   },
   {
-    "name": "Elephant",
-    "description": "Junk in the trunk!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=elephant",
-    "image": "https://austingriffith.com/images/paintings/elephant.jpg",
+    "name": "Enso #5",
+    "image": "https://gateway.pinata.cloud/ipfs/QmSj25YWq8YT6HJvnBXBaPnKej3XMZt5HGUg4WiWQPMZW4/ENOSBLUE-10/ENOSBLUE5.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "orange"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 38
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 1
+      },
+      {
+        "trait_type": "color",
+        "value": "blue"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Radial Design #5"
+      }
     ]
   },
   {
-    "name": "Hippo",
-    "description": "Unsure.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=hippo",
-    "image": "https://austingriffith.com/images/paintings/hippo.jpg",
+    "name": "Enso #40",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaVd7Gp88AEVLgi2BuDQSzjbxD13LQ71MUmV1zXgjmpUL/RARE/ENOSRARE7.mp4",
+    "description": "The Enso NFT is a limited NFT collection where the token doubles as your membership to the Enso group as well as access to the Enso platform when it launches. Each edition has a unique pattern generated through infinitive code. Visit www.tryenso.com for more info.",
     "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "green"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 39
-       }
-    ]
-  },
-  {
-    "name": "Lobster",
-    "description": "Rock lobster!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=lobster",
-    "image": "https://austingriffith.com/images/paintings/lobster.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "grey"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 12
-       }
-    ]
-  },
-  {
-    "name": "Mountain Goat",
-    "description": "Goatse!",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=mountaingoat",
-    "image": "https://austingriffith.com/images/paintings/mountaingoat.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 70
-       }
-    ]
-  },
-  {
-    "name": "Octopus",
-    "description": "Dope 'stach.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=octopus",
-    "image": "https://austingriffith.com/images/paintings/octopus.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "purple"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 41
-       }
-    ]
-  },
-  {
-    "name": "Ox",
-    "description": "The ringer.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=ox",
-    "image": "https://austingriffith.com/images/paintings/ox.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "blue"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 59
-       }
-    ]
-  },
-  {
-    "name": "Penguin",
-    "description": "It's cold out here.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=penguin",
-    "image": "https://austingriffith.com/images/paintings/penguin.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "orange"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 23
-       }
-    ]
-  },
-  {
-    "name": "Walrus",
-    "description": "Seems nice.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=walrus",
-    "image": "https://austingriffith.com/images/paintings/walrus.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "orange"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 23
-       }
-    ]
-  },
-  {
-    "name": "Killer Whale",
-    "description": "Killers.",
-    "external_url": "https://austingriffith.com/portfolio/paintings/?id=killerwhale",
-    "image": "https://austingriffith.com/images/paintings/killerwhale.jpg",
-    "attributes": [
-       {
-         "trait_type": "BackgroundColor",
-         "value": "green"
-       },
-       {
-         "trait_type": "Eyes",
-         "value": "googly"
-       },
-       {
-         "trait_type": "Stamina",
-         "value": 87
-       }
+      {
+        "trait_type": "#of Colors",
+        "value": 3
+      },
+      {
+        "trait_type": "color",
+        "value": "purple"
+      },
+      {
+        "trait_type": "color 2",
+        "value": "lime green"
+      },
+      {
+        "trait_type": "color 3",
+        "value": "blue green"
+      },
+      {
+        "trait_type": "Pattern",
+        "value": "Spiral Design #5"
+      }
     ]
   }
 ]

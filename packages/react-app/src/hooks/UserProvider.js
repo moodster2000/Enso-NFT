@@ -27,7 +27,7 @@ const useUserProvider = (injectedProvider, localProvider) =>
       console.log("🦊 Using injected provider");
       return injectedProvider;
     }
-    if (!localProvider) return undefined;
+    if (localProvider) return undefined;
 
     const burnerConfig = {};
 
